@@ -1,7 +1,20 @@
 #To-Do-Listen-Programm
-#menü
-to_do_liste= []
+to_do_liste = []
 
+#liste laden und speichern
+def load_to_do_liste():
+    with open("to_do_liste.txt","r") as file:  #read
+        for aufgabe in file:
+            to_do_liste.append(aufgabe)
+
+
+def save_to_do_liste():
+    with open("to_do_liste.txt","w") as file:  #write
+        for aufgabe in to_do_liste:
+            file.write(aufgabe)
+
+
+#menü
 def to_do_list_menue():
     choice = None
 
@@ -19,6 +32,7 @@ def to_do_list_menue():
 
     return choice
 
+
 #funktionen
 def anzeigen():
 
@@ -29,7 +43,6 @@ def anzeigen():
         print ("Deine Aufgaben:")
         for aufgaben in to_do_liste:
             print(aufgaben)
-
 
 
 def hinzufuegen():
@@ -51,6 +64,7 @@ def loeschen():
         print("Aufgabe nicht gefunden")
 
 
+load_to_do_liste()
 #funktionen abrufen
 while True :
     choice = to_do_list_menue()
@@ -65,10 +79,6 @@ while True :
         loeschen()
 
     if choice == "4":
+        save_to_do_liste()
         print("Beenden")
         break
-
-
-
-
-
