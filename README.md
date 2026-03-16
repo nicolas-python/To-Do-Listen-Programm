@@ -1,6 +1,6 @@
 # To Do Listen Programm
 
-Ein einfaches To-Do-Listen Programm mit Python.
+Ein To-Do-Listen Programm mit Python.
 
 ## Funktionen
 
